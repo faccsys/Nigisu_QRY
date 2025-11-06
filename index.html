@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIGISU - Sistema de Consultas y Reportes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>NIGISU</h1>
+                <p class="tagline">Sistema Integral de Gestión</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Sitio WEB NIGISU</h2>
+                <p class="subtitle">Consultas y reportes para:</p>
+            </div>
+        </section>
+
+        <section class="modules">
+            <div class="container">
+                <div class="module-grid">
+                    <div class="module-card">
+                        <div class="icon">📊</div>
+                        <h3>Cuentas x Cobrar</h3>
+                        <p>Gestión completa de cartera de clientes, seguimiento de pagos y análisis de antigüedad de saldos.</p>
+                        <ul>
+                            <li>Reportes de saldos pendientes</li>
+                            <li>Historial de transacciones</li>
+                            <li>Alertas de vencimientos</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="icon">💳</div>
+                        <h3>Cuentas x Pagar</h3>
+                        <p>Control eficiente de obligaciones con proveedores y programación de pagos estratégicos.</p>
+                        <ul>
+                            <li>Calendario de pagos</li>
+                            <li>Estado de obligaciones</li>
+                            <li>Conciliación bancaria</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="icon">📦</div>
+                        <h3>Inventarios</h3>
+                        <p>Administración integral de stock, movimientos y valorización de productos en tiempo real.</p>
+                        <ul>
+                            <li>Control de existencias</li>
+                            <li>Movimientos de almacén</li>
+                            <li>Valorización de inventario</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <div class="container">
+                <h2>Análisis de Gestión Mensual</h2>
+                <div class="chart-container">
+                    <canvas id="managementChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div class="container">
+                <h2>Beneficios del Sistema</h2>
+                <div class="benefits-grid">
+                    <div class="benefit">
+                        <h4>⚡ Acceso Rápido</h4>
+                        <p>Consultas en tiempo real desde cualquier dispositivo</p>
+                    </div>
+                    <div class="benefit">
+                        <h4>📈 Reportes Precisos</h4>
+                        <p>Información actualizada y confiable para la toma de decisiones</p>
+                    </div>
+                    <div class="benefit">
+                        <h4>🔒 Seguridad</h4>
+                        <p>Protección de datos con estándares de seguridad avanzados</p>
+                    </div>
+                    <div class="benefit">
+                        <h4>🎯 Eficiencia</h4>
+                        <p>Automatización de procesos para optimizar recursos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>NIGISU</h4>
+                    <p>Sistema Integral de Gestión Empresarial</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Email: info@faccsystem.com</p>
+                    <p>Teléfono: +593 99 878-4884</p>
+                    <p>Quito, Ecuador</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <p><a href="index.html">Inicio</a></p>
+                    <p><a href="nosotros.html">Nosotros</a></p>
+                    <p><a href="contacto.html">Contacto</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NIGISU. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        const ctx = document.getElementById('managementChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                datasets: [{
+                    label: 'Cuentas x Cobrar',
+                    data: [65000, 72000, 68000, 81000, 76000, 89000],
+                    backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                    borderColor: 'rgba(52, 152, 219, 1)',
+                    borderWidth: 2
+                }, {
+                    label: 'Cuentas x Pagar',
+                    data: [45000, 52000, 48000, 61000, 56000, 69000],
+                    backgroundColor: 'rgba(231, 76, 60, 0.7)',
+                    borderColor: 'rgba(231, 76, 60, 1)',
+                    borderWidth: 2
+                }, {
+                    label: 'Inventario (Valor)',
+                    data: [120000, 125000, 118000, 135000, 142000, 138000],
+                    backgroundColor: 'rgba(46, 204, 113, 0.7)',
+                    borderColor: 'rgba(46, 204, 113, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Gestión Financiera - Últimos 6 Meses',
+                        font: {
+                            size: 18
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo h1 {
+            color: #667eea;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover, nav a.active {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 0;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .modules {
+            padding: 2rem 0;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .module-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .module-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .module-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .module-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .module-card li {
+            padding: 0.5rem 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+
+        .module-card li:before {
+            content: "✓ ";
+            color: #46d160;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .chart-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .chart-section h2 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 2rem;
+        }
+
+        .chart-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .benefits {
+            padding: 2rem 0;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .benefit {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .benefit h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: rgba(51, 51, 51, 0.95);
+            color: white;
+            padding: 2rem 0 1rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #555;
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
