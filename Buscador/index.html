@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facc - System - BUSCADOR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container">
+        <header>
+            <h1>Buscador Facc - System</h1>
+            <p class="subtitle">Ingresa tu búsqueda para comenzar</p>
+        </header>
+
+        <!-- INTERFAZ PRINCIPAL DE BÚSQUEDA -->
+        <main id="main-interface">
+            <form id="search-form" class="search-form">
+                <div class="form-group">
+                    <label for="search-input">¿Qué deseas buscar?</label>
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        name="search" 
+                        placeholder="Ej: Personas por nombres."
+                        required
+                    >
+                </div>
+                <button type="submit" class="btn-search">
+                    🔍 Buscar
+                </button>
+                <button type="button" id="btn-clear" class="btn-clear">
+                    🗑️ Limpiar
+                </button>
+            </form>
+        </main>
+
+        <!-- MENSAJE DE CARGA (OCULTO POR DEFECTO) -->
+        <div id="loading-message" class="loading-message hidden">
+            <div class="spinner"></div>
+            <p id="loading-text">Buscando información...</p>
+        </div>
+
+        <!-- ÁREA DE RESULTADOS (OCULTO POR DEFECTO) -->
+        <div id="results-area" class="results-area hidden">
+            <h2>Resultados de la búsqueda</h2>
+            <div id="results-content">
+                <!-- Aquí se mostrarán los resultados en futuras entregas -->
+            </div>
+            <button type="button" id="btn-new-search" class="btn-secondary">
+                ← Nueva Búsqueda
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
